@@ -40,6 +40,12 @@ html,body {
 }
 
 
+.tl-wrapper-status--exiting .phrase {
+opacity: 0 !important;;
+transition: all 1s ease;
+transition-property: opacity;
+}
+
   .c--hidden {
      opacity: 0;
   }

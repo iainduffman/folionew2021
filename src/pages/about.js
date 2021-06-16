@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { Menu } from '../components/Menu';
 import Cursor from '../components/Cursor';
+import Helmet from 'react-helmet'
 import gsap from 'gsap';
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(SplitText);
 
 
 const About = ({ transitionStatus }) => {
@@ -17,6 +21,7 @@ const About = ({ transitionStatus }) => {
       }
     });
     if (direction === 1) {
+
       gsap.from(even, {
         duration: 1,
         y: 100 * direction,
@@ -27,6 +32,7 @@ const About = ({ transitionStatus }) => {
           amount: 0.3,
         },
       });
+
 
       gsap.from(odd, {
         duration: 1,
@@ -47,6 +53,15 @@ const About = ({ transitionStatus }) => {
         ease: 'Power1.easeInOut',
         backgroundColor: '#000000'
       })
+
+    var tl = gsap.timeline({delay: 1}), 
+    mySplitText = new SplitText("#quote-two", {type:"words,chars"}), 
+    chars = mySplitText.chars; //an array of all the divs that wrap each character
+
+gsap.set("#quote-two", {perspective: 400});
+
+tl.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.01}, "+=0");
+
     }
     if (direction === -1) {
       gsap.to(even, {
@@ -70,14 +85,23 @@ const About = ({ transitionStatus }) => {
           amount: 0.1,
         },
       });
+
     }
+
+    
   };
+
+
 
   useEffect(() => {
     textfly(textRefs.current, 1);
+    gsap.set("#quote", {opacity: 0});
+    console.log('IM ENTERIN!!!!!!')
   }, []);
   useEffect(() => {
     if (transitionStatus === 'exiting') {
+      console.log('IM LEAVING!!')
+      gsap.set("#quote-two", {opacity: 1});
       textfly(textRefs.current, -1);
     }
   }, [transitionStatus]);
@@ -85,40 +109,35 @@ const About = ({ transitionStatus }) => {
     <>
       
       <main className="container mx-auto px-2 md:px-0 text-white">
+      <Helmet>
+      <body className="dark-theme" />
+      </Helmet>
         <Menu />
         <div className="w-full h-full flex justify-center items-center realizzazioni">
-          <div id="categories" className="leading-9 w-full md:w-1/2 text-yellow-600">
-            <p
-              ref={(el) => (textRefs.current[0] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-bold relative overflow-hidden uppercase transform phrase"
-            >
-              Omni channel
+          <div id="categories" className="leading-9 title w-full md:w-1/2 text-red-600">
+          <p id="quote-two" className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase">
+          Omni channel for the dicerning customer personality.
+          </p>
+    
+            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16 text-gray-400" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            <br></br><br></br>
+            
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            <br></br><br></br>
+
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            <br></br><br></br>
+
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            <br></br><br></br>
+
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
             </p>
-            <p
-              ref={(el) => (textRefs.current[1] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-bold relative overflow-hidden uppercase transform phrase"
-            >
-              for the
-            </p>
-            <p
-              ref={(el) => (textRefs.current[2] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
-            >
-              discerning
-            </p>
-            <p
-              ref={(el) => (textRefs.current[3] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
-            >
-              customer
-            </p>
-            <p
-              ref={(el) => (textRefs.current[4] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black text-white relative overflow-hidden uppercase transform phrase"
-            >
-              archetype.
-            </p>
-            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16 text-gray-400" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
           </div>
         </div>
       </main>

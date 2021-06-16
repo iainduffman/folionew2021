@@ -9,7 +9,7 @@ export const Menu = () => {
           <TransitionLink
             to="/"
             exit={{
-              length: 1,
+              length: 2,
             }}
             entry={{ length: 1 }}
             className="hover:text-gray-600"
@@ -22,20 +22,20 @@ export const Menu = () => {
             <TransitionLink
               to="/about"
               exit={{
-                length: 1,
+                length: 2,
               }}
-              entry={{}}
+              entry={{ length: 1 }}
               className="hover:text-gray-600"
               activeClassName="border-b-2 border-gray-600"
             >
-              One
+              Onee
             </TransitionLink>
           </div>
           <div className="mr-8 text-md uppercase">
             <TransitionLink
               to="/contact"
               exit={{
-                length: 1,
+                length: 2,
               }}
               entry={{}}
               className="hover:text-gray-600"
@@ -48,7 +48,7 @@ export const Menu = () => {
             <TransitionLink
               to="/next"
               exit={{
-                length: 1,
+                length: 2,
               }}
               entry={{}}
               className="hover:text-gray-600"
@@ -61,7 +61,7 @@ export const Menu = () => {
             <TransitionLink
               to="/nextone"
               exit={{
-                length: 1,
+                length: 2,
               }}
               entry={{}}
               className="hover:text-gray-600"
