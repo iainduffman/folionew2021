@@ -86,7 +86,7 @@ const About = ({ transitionStatus }) => {
       <main className="container mx-auto px-2 md:px-0">
         <Menu />
         <div className="w-full h-full flex justify-center items-center realizzazioni">
-          <div id="categories" className="title w-full md:w-1/2">
+          <div id="categories" className="leading-9 title w-full md:w-1/2">
           <p
               ref={(el) => (textRefs.current[0] = el)}
               className="list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase"
