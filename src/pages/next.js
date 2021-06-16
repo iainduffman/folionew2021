@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { Menu } from '../components/Menu';
 import Cursor from '../components/Cursor';
+import Helmet from 'react-helmet'
 import gsap from 'gsap';
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(SplitText);
 
 
 const About = ({ transitionStatus }) => {
@@ -17,6 +21,7 @@ const About = ({ transitionStatus }) => {
       }
     });
     if (direction === 1) {
+
       gsap.from(even, {
         duration: 1,
         y: 100 * direction,
@@ -27,6 +32,7 @@ const About = ({ transitionStatus }) => {
           amount: 0.3,
         },
       });
+
 
       gsap.from(odd, {
         duration: 1,
@@ -45,8 +51,17 @@ const About = ({ transitionStatus }) => {
         duration: 0.6,
         delay: 1,
         ease: 'Power1.easeInOut',
-        backgroundColor: '#000000'
+        backgroundColor: '#cccccc'
       })
+
+    var tl3 = gsap.timeline({delay: 1}), 
+    mySplitText = new SplitText("#quote-three", {type:"words,chars"}), 
+    chars = mySplitText.chars; //an array of all the divs that wrap each character
+
+gsap.set("#quote-three", {perspective: 400});
+
+tl3.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01}, "+=0");
+
     }
     if (direction === -1) {
       gsap.to(even, {
@@ -70,55 +85,40 @@ const About = ({ transitionStatus }) => {
           amount: 0.1,
         },
       });
+
     }
+
+    
   };
+
+
 
   useEffect(() => {
     textfly(textRefs.current, 1);
+    console.log('IM ENTERIN!!!!!!')
   }, []);
   useEffect(() => {
     if (transitionStatus === 'exiting') {
+      console.log('IM LEAVING!!')
+      gsap.set("#quote-three", {opacity: 1});
       textfly(textRefs.current, -1);
     }
   }, [transitionStatus]);
   return (
     <>
       
-      <main className="container mx-auto px-2 md:px-0 text-white">
+      <main className="container mx-auto px-2 md:px-0">
+      <Helmet>
+      <body className="light-light" />
+      </Helmet>
         <Menu />
         <div className="w-full h-full flex justify-center items-center realizzazioni">
           <div id="categories" className="leading-9 title w-full md:w-1/2 text-red-600">
-            <p
-              ref={(el) => (textRefs.current[0] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
-            >
-              Omni channel
-            </p>
-            <p
-              ref={(el) => (textRefs.current[1] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
-            >
-              for the
-            </p>
-            <p
-              ref={(el) => (textRefs.current[2] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
-            >
-              discerning
-            </p>
-            <p
-              ref={(el) => (textRefs.current[3] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
-            >
-              customer
-            </p>
-            <p
-              ref={(el) => (textRefs.current[4] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-bold text-white relative overflow-hidden uppercase transform phrase"
-            >
-              archetype.
-            </p>
-            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16 text-gray-400" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+          <p id="quote-three" className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase">
+          Exploring the hidden dimension on 43rd street.
+          </p>
+    
+            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16 text-gray-600" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
             
             <br></br><br></br>
             

@@ -60,7 +60,7 @@ const About = ({ transitionStatus }) => {
 
 gsap.set("#quote", {perspective: 400});
 
-tl.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.01}, "+=0");
+tl.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01}, "+=0");
 
     }
     if (direction === -1) {
@@ -116,7 +116,7 @@ tl.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transfor
         <div className="w-full h-full flex justify-center items-center realizzazioni">
           <div id="categories" className="leading-9 title w-full md:w-1/2 text-black">
           <p id="quote" className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase">
-          Omni channel for the <span class="font-bold">discerning</span> customer archetype.
+          Omni channel for the <span class="font-bold">Great</span>.
           </p>
     
             <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16 text-gray-400" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.

@@ -41,9 +41,13 @@ html,body {
 
 
 .tl-wrapper-status--exiting .phrase {
-opacity: 0 !important;;
+opacity: 0 !important;
 transition: all 1s ease;
 transition-property: opacity;
+}
+
+.phrase div {
+  overflow: hidden;
 }
 
   .c--hidden {

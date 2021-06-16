@@ -60,7 +60,8 @@ const About = ({ transitionStatus }) => {
 
 gsap.set("#quote-two", {perspective: 400});
 
-tl.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.01}, "+=0");
+tl.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01}, "+=0");
+
 
     }
     if (direction === -1) {
