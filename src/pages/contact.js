@@ -21,7 +21,7 @@ const About = ({ transitionStatus }) => {
         duration: 1,
         y: 100 * direction,
         opacity: 0,
-        delay: 0.05,
+        delay: 0.9,
         ease: 'power4.inOut',
         stagger: {
           amount: 0.3,
@@ -32,23 +32,26 @@ const About = ({ transitionStatus }) => {
         duration: 1,
         y: 100 * direction,
         opacity: 0,
-        delay: 0.09,
+        delay: 1.04,
         ease: 'power4.inOut',
         stagger: {
           amount: 0.3,
         },
+        
+
       });
 
       gsap.to(document.body, {
-        duration: 0.8,
+        duration: 0.6,
+        delay: 1,
         ease: 'Power1.easeInOut',
         backgroundColor: '#ffffff'
       })
     }
     if (direction === -1) {
       gsap.to(even, {
-        duration: 0.3,
-        y: -100 * direction,
+        duration: 0.8,
+        y: 80 * direction,
         opacity: 0,
         delay: 0,
         ease: 'Power3.easeIn',
@@ -58,13 +61,13 @@ const About = ({ transitionStatus }) => {
       });
 
       gsap.to(odd, {
-        duration: 0.3,
-        y: -100 * direction,
+        duration: 0.8,
+        y: 80 * direction,
         opacity: 0,
-        delay: 0,
+        delay: 0.1,
         ease: 'Power3.easeIn',
         stagger: {
-          amount: 0.5,
+          amount: 0.1,
         },
       });
     }

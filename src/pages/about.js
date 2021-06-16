@@ -42,7 +42,8 @@ const About = ({ transitionStatus }) => {
       });
 
       gsap.to(document.body, {
-        duration: 0.8,
+        duration: 0.6,
+        delay: 1,
         ease: 'Power1.easeInOut',
         backgroundColor: '#000000'
       })

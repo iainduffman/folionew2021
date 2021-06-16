@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Menu } from '../components/Menu';
+import Cursor from '../components/Cursor';
 import gsap from 'gsap';
+
 
 const About = ({ transitionStatus }) => {
   let textRefs = useRef([]);
@@ -19,7 +21,7 @@ const About = ({ transitionStatus }) => {
         duration: 1,
         y: 100 * direction,
         opacity: 0,
-        delay: 0.05,
+        delay: 0.9,
         ease: 'power4.inOut',
         stagger: {
           amount: 0.3,
@@ -30,40 +32,26 @@ const About = ({ transitionStatus }) => {
         duration: 1,
         y: 100 * direction,
         opacity: 0,
-        delay: 0.09,
+        delay: 1.04,
         ease: 'power4.inOut',
         stagger: {
           amount: 0.3,
         },
+        
+
       });
 
       gsap.to(document.body, {
-        duration: 0.8,
+        duration: 0.6,
+        delay: 1,
         ease: 'Power1.easeInOut',
         backgroundColor: '#000000'
       })
-
-
-      gsap.to('.description___', {
-        duration: 0.8,
-        delay: 1,
-        ease: 'Power1.easeInOut',
-        fontSize: '13px'
-      })
-
-      gsap.to('.description___', {
-        duration: 0.8,
-        delay: 1.2,
-        ease: 'Power1.easeInOut',
-        marginTop: '113px'
-      })
-
-
     }
     if (direction === -1) {
       gsap.to(even, {
-        duration: 0.3,
-        y: -100 * direction,
+        duration: 0.8,
+        y: 80 * direction,
         opacity: 0,
         delay: 0,
         ease: 'Power3.easeIn',
@@ -73,13 +61,13 @@ const About = ({ transitionStatus }) => {
       });
 
       gsap.to(odd, {
-        duration: 0.3,
-        y: -100 * direction,
+        duration: 0.8,
+        y: 80 * direction,
         opacity: 0,
-        delay: 0,
+        delay: 0.1,
         ease: 'Power3.easeIn',
         stagger: {
-          amount: 0.5,
+          amount: 0.1,
         },
       });
     }
@@ -95,44 +83,64 @@ const About = ({ transitionStatus }) => {
   }, [transitionStatus]);
   return (
     <>
+      
       <main className="container mx-auto px-2 md:px-0 text-white">
-        <Menu className="text-white" />
+        <Menu />
         <div className="w-full h-full flex justify-center items-center realizzazioni">
-          <div id="categories" className="w-full md:w-1/2 text-red-600">
+          <div id="categories" className="leading-9 title w-full md:w-1/2 text-red-600">
             <p
               ref={(el) => (textRefs.current[0] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase"
+              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
             >
-              Creating
+              Omni channel
             </p>
             <p
               ref={(el) => (textRefs.current[1] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase"
+              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
             >
-              new ways 
+              for the
             </p>
             <p
               ref={(el) => (textRefs.current[2] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase"
+              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
             >
-             of working
+              discerning
             </p>
             <p
               ref={(el) => (textRefs.current[3] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase"
+              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
             >
-              in a world
+              customer
             </p>
             <p
               ref={(el) => (textRefs.current[4] = el)}
-              className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-bold relative overflow-hidden uppercase transform phrase"
+              className="list-none text-6xl md:text-6xl lg:text-8xl font-bold text-white relative overflow-hidden uppercase transform phrase"
             >
-              post covid.
+              archetype.
             </p>
-            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden description mt-8" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16 text-gray-400" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            <br></br><br></br>
+            
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            <br></br><br></br>
+
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            <br></br><br></br>
+
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            <br></br><br></br>
+
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            </p>
           </div>
         </div>
       </main>
+      <Cursor />
     </>
   );
 };
