@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Menu } from '../components/Menu';
+import Cursor from '../components/Cursor';
 import gsap from 'gsap';
+import Helmet from 'react-helmet'
 
 const About = ({ transitionStatus }) => {
   let textRefs = useRef([]);
@@ -78,10 +80,13 @@ const About = ({ transitionStatus }) => {
   }, [transitionStatus]);
   return (
     <>
+    <Helmet>
+    <body className="light-theme" />
+    </Helmet>
       <main className="container mx-auto px-2 md:px-0">
         <Menu />
         <div className="w-full h-full flex justify-center items-center realizzazioni">
-          <div id="categories" className="w-full md:w-1/2">
+          <div id="categories" className="title w-full md:w-1/2">
           <p
               ref={(el) => (textRefs.current[0] = el)}
               className="list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase"
@@ -117,11 +122,11 @@ const About = ({ transitionStatus }) => {
             Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
             <br></br><br></br>
             Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam</p>
-
-            
           </div>
         </div>
+        
       </main>
+      <Cursor />
     </>
   );
 };
