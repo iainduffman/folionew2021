@@ -96,25 +96,25 @@ const About = ({ transitionStatus }) => {
             </p>
             <p
               ref={(el) => (textRefs.current[1] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
+              className="list-none text-6xl md:text-6xl lg:text-8xl text-white font-extra-black relative overflow-hidden uppercase transform phrase"
             >
               for the
             </p>
             <p
               ref={(el) => (textRefs.current[2] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
+              className="list-none text-6xl md:text-6xl lg:text-8xl text-white font-extra-black relative overflow-hidden uppercase transform phrase"
             >
               discerning
             </p>
             <p
               ref={(el) => (textRefs.current[3] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase"
+              className="list-none text-6xl md:text-6xl lg:text-8xl text-white font-extra-black relative overflow-hidden uppercase transform phrase"
             >
               customer
             </p>
             <p
               ref={(el) => (textRefs.current[4] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-bold text-white relative overflow-hidden uppercase transform phrase"
+              className="list-none text-6xl md:text-6xl lg:text-8xl font-bold relative overflow-hidden uppercase transform phrase"
             >
               archetype.
             </p>
