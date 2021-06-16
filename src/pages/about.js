@@ -21,7 +21,7 @@ const About = ({ transitionStatus }) => {
         duration: 1,
         y: 100 * direction,
         opacity: 0,
-        delay: 0.05,
+        delay: 0.9,
         ease: 'power4.inOut',
         stagger: {
           amount: 0.3,
@@ -32,7 +32,7 @@ const About = ({ transitionStatus }) => {
         duration: 1,
         y: 100 * direction,
         opacity: 0,
-        delay: 0.09,
+        delay: 1.04,
         ease: 'power4.inOut',
         stagger: {
           amount: 0.3,
@@ -49,8 +49,8 @@ const About = ({ transitionStatus }) => {
     }
     if (direction === -1) {
       gsap.to(even, {
-        duration: 0.3,
-        y: -100 * direction,
+        duration: 0.8,
+        y: 80 * direction,
         opacity: 0,
         delay: 0,
         ease: 'Power3.easeIn',
@@ -60,13 +60,13 @@ const About = ({ transitionStatus }) => {
       });
 
       gsap.to(odd, {
-        duration: 0.3,
-        y: -100 * direction,
+        duration: 0.8,
+        y: 80 * direction,
         opacity: 0,
-        delay: 0,
+        delay: 0.1,
         ease: 'Power3.easeIn',
         stagger: {
-          amount: 0.5,
+          amount: 0.1,
         },
       });
     }
@@ -117,7 +117,7 @@ const About = ({ transitionStatus }) => {
             >
               archetype.
             </p>
-            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-8 text-white" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16 text-gray-400" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
           </div>
         </div>
       </main>
