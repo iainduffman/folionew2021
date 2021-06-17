@@ -50,7 +50,7 @@ const About = ({ transitionStatus }) => {
         duration: 0.6,
         delay: 1,
         ease: 'Power1.easeInOut',
-        backgroundColor: '#530202'
+        backgroundColor: '#8D1717'
       })
 
     var tl = gsap.timeline({delay: 1}), 
@@ -119,7 +119,7 @@ tl.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out",
           Omni channel for the <span class="font-bold">Great</span>.
           </p>
     
-            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16 text-gray-400" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16 text-white" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
             
             <br></br><br></br>
             

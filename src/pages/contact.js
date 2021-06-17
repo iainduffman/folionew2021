@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { Menu } from '../components/Menu';
 import Cursor from '../components/Cursor';
-import gsap from 'gsap';
 import Helmet from 'react-helmet'
+import gsap from 'gsap';
+import { SplitText } from "../components/SplitText";
+
 
 const About = ({ transitionStatus }) => {
   let textRefs = useRef([]);
@@ -17,6 +19,7 @@ const About = ({ transitionStatus }) => {
       }
     });
     if (direction === 1) {
+
       gsap.from(even, {
         duration: 1,
         y: 100 * direction,
@@ -27,6 +30,7 @@ const About = ({ transitionStatus }) => {
           amount: 0.3,
         },
       });
+
 
       gsap.from(odd, {
         duration: 1,
@@ -47,6 +51,15 @@ const About = ({ transitionStatus }) => {
         ease: 'Power1.easeInOut',
         backgroundColor: '#ffffff'
       })
+
+    var tl3 = gsap.timeline({delay: 1}), 
+    mySplitText = new SplitText("#quote-four", {type:"words,chars"}), 
+    chars = mySplitText.chars; //an array of all the divs that wrap each character
+
+gsap.set("#quote-four", {perspective: 400});
+
+tl3.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01}, "+=0");
+
     }
     if (direction === -1) {
       gsap.to(even, {
@@ -70,64 +83,60 @@ const About = ({ transitionStatus }) => {
           amount: 0.1,
         },
       });
+
     }
+
+    
   };
+
+
 
   useEffect(() => {
     textfly(textRefs.current, 1);
+    console.log('IM ENTERIN!!!!!!')
   }, []);
   useEffect(() => {
     if (transitionStatus === 'exiting') {
+      console.log('IM LEAVING!!')
+      gsap.set("#quote-four", {opacity: 1});
       textfly(textRefs.current, -1);
     }
   }, [transitionStatus]);
   return (
     <>
-    <Helmet>
-    <body className="light-theme" />
-    </Helmet>
+      
       <main className="container mx-auto px-2 md:px-0">
+      <Helmet>
+      <body className="light-light" />
+      </Helmet>
         <Menu />
         <div className="w-full h-full flex justify-center items-center realizzazioni">
-          <div id="categories" className="leading-9 title w-full md:w-1/2">
-          <p
-              ref={(el) => (textRefs.current[0] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase"
-            >
-              Finding
-            </p>
-            <p
-              ref={(el) => (textRefs.current[1] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase"
-            >
-              A new
-            </p>
-            <p
-              ref={(el) => (textRefs.current[2] = el)}
-              className="text-red-600 font-black list-none text-6xl md:text-6xl lg:text-8xl relative overflow-hidden uppercase transform phrase"
-            >
-              juncture
-            </p>
-            <p
-              ref={(el) => (textRefs.current[3] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-bold relative overflow-hidden uppercase transform phrase"
-            >
-              at
-            </p>
-            <p
-              ref={(el) => (textRefs.current[4] = el)}
-              className="list-none text-6xl md:text-6xl lg:text-8xl font-bold relative overflow-hidden uppercase transform phrase"
-            >
-              Vogue UK
-            </p>
-            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+          <div id="categories" className="leading-9 title w-full md:w-1/2 text-black-600">
+          <p id="quote-four" className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase">
+          The story of a living breathing design language system
+          </p>
+    
+            <p ref={(el) => (textRefs.current[5] = el)} className="overflow-hidden mt-16 text-gray-600" >Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
             <br></br><br></br>
+            
             Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
             <br></br><br></br>
-            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam</p>
+
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            <br></br><br></br>
+
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            <br></br><br></br>
+
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+            
+            </p>
           </div>
         </div>
-        
       </main>
       <Cursor />
     </>
