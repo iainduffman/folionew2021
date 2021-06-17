@@ -4,8 +4,7 @@ import Cursor from '../components/Cursor';
 import Helmet from 'react-helmet'
 import gsap from 'gsap';
 import { SplitText } from "../components/SplitText";
-
-
+import { withPrefix } from "gatsby";
 
 
 const About = ({ transitionStatus }) => {
@@ -93,7 +92,6 @@ tl.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out",
   };
 
 
-
   useEffect(() => {
     textfly(textRefs.current, 1);
     gsap.set("#quote", {opacity: 0});
@@ -112,8 +110,10 @@ tl.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out",
       <main className="container mx-auto px-2 md:px-0 text-white">
       <Helmet>
       <body className="dark-theme" />
+      <script src={withPrefix('progress.js')} />
       </Helmet>
         <Menu />
+        <progress min="0" max="100" value="0"></progress>
         <div className="w-full h-full flex justify-center items-center realizzazioni">
           <div id="categories" className="leading-9 title w-full md:w-1/2 text-red-600">
           <p id="quote-two" className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase">
