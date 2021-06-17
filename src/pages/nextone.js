@@ -22,6 +22,7 @@ const About = ({ transitionStatus }) => {
     });
     if (direction === 1) {
 
+      
       gsap.from(even, {
         duration: 1,
         y: 100 * direction,
