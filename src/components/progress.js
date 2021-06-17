@@ -1,5 +1,5 @@
 const progressbar = document.querySelector('progress')
-const article = document.querySelector('article')
+const article = document.querySelector('.container')
 
 let isScrolling = false
 

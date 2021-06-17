@@ -54,6 +54,8 @@ transition-property: opacity;
      opacity: 0;
   }
 
+  
+
   .c--click {
     transform: translate(-50%, -50%) scale(0.5);
     background-color: rgba(253, 16, 16, 0.8);
@@ -77,4 +79,48 @@ transition-property: opacity;
  .light-theme .c--hoverGrey {
   transform: translate(-50%, -50%) scale(0.2);
   border: 4px solid rgb(189, 189, 189);
+}
+
+
+progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 15px;
+  border: none;
+  background: transparent;
+}
+progress::-webkit-progress-bar {
+  background: transparent;
+}
+progress::-webkit-progress-value {
+  background: linear-gradient(to left, #db38b5,#01b3e3,#25ce7b,#fdc741,#ff6b01,#fc4236);
+  background-attachment: fixed;
+}
+progress::-moz-progress-bar {
+  background: linear-gradient(to left, #db38b5,#01b3e3,#25ce7b,#fdc741,#ff6b01,#fc4236);
+  background-attachment: fixed;
+}
+
+body {
+  background: linear-gradient(to bottom,
+    desaturate(lighten(#db38b5, 30%), 30%),
+    desaturate(lighten(#01b3e3, 30%), 30%),
+    desaturate(lighten(#25ce7b, 30%), 30%),
+    desaturate(lighten(#fdc741, 30%), 30%),
+    desaturate(lighten(#ff6b01, 30%), 30%),
+    desaturate(lighten(#fc4236, 30%), 30%)
+  );
+}
+section {
+  min-height: 100vh;
+  padding: 10vw 5vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
