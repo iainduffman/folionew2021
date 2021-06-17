@@ -3,7 +3,7 @@ import { Menu } from '../components/Menu';
 import Cursor from '../components/Cursor';
 import Helmet from 'react-helmet'
 import gsap from 'gsap';
-import { SplitText } from "gsap/src/SplitText";
+import { SplitText } from "../components/SplitText";
 
 
 
