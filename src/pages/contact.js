@@ -58,21 +58,27 @@ const About = ({ transitionStatus }) => {
         ease: 'none',
       
         scrollTrigger: { 
-          trigger: "#copy",
+          trigger: "body",
           scrub: 0.5,
           markers: false,
           start: "top top",
         end: "bottom bottom",
-        }
+      }
       });
+
+      gsap.set(".dummy-start-scroll-contact", {height: 0});
+
+      var tlprogressbardummyshow = gsap.timeline({delay: 1.5});
+      tlprogressbardummyshow.to(".dummy-start-scroll-contact", {height: 70, duration: 1, ease:"out"});
+
 
     var tl3 = gsap.timeline({delay: 1}), 
     mySplitText = new SplitText("#quote-four", {type:"words,chars"}), 
     chars = mySplitText.chars; //an array of all the divs that wrap each character
 
-gsap.set("#quote-four", {perspective: 400});
+    gsap.set("#quote-four", {perspective: 400});
 
-tl3.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01}, "+=0");
+    tl3.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01}, "+=0");
 
     }
     if (direction === -1) {
@@ -86,6 +92,8 @@ tl3.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out"
           amount: 0.2,
         },
       });
+
+      gsap.to(".dummy-start-scroll-contact", {delay: 1, height: 0, duration: 0.5, ease:'back'});
 
       gsap.to(odd, {
         duration: 0.8,
@@ -123,6 +131,7 @@ tl3.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out"
       <Helmet>
       <body className="light-light" />
       </Helmet>
+      <div className="dummy-start-scroll-contact"></div>
       <progress max="100" value="0"></progress>
         <Menu />
         <div className="w-full h-full flex justify-center items-center realizzazioni">
