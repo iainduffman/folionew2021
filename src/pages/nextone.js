@@ -3,7 +3,7 @@ import { Menu } from '../components/Menu';
 import Cursor from '../components/Cursor';
 import Helmet from 'react-helmet'
 import gsap from 'gsap';
-import { SplitText } from "gsap/SplitText";
+import { SplitText } from "gsap/src/SplitText";
 
 gsap.registerPlugin(SplitText);
 
@@ -22,7 +22,7 @@ const About = ({ transitionStatus }) => {
     });
     if (direction === 1) {
 
-      
+
       gsap.from(even, {
         duration: 1,
         y: 100 * direction,
