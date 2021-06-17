@@ -5,8 +5,6 @@ import Helmet from 'react-helmet'
 import gsap from 'gsap';
 import { SplitText } from "gsap/src/SplitText";
 
-gsap.registerPlugin(SplitText);
-
 
 const About = ({ transitionStatus }) => {
   let textRefs = useRef([]);
@@ -112,6 +110,7 @@ tl.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out",
       <main className="container mx-auto px-2 md:px-0 text-white">
       <Helmet>
       <body className="dark-theme" />
+      
       </Helmet>
         <Menu />
         <div className="w-full h-full flex justify-center items-center realizzazioni">

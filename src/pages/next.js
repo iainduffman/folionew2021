@@ -5,8 +5,6 @@ import Helmet from 'react-helmet'
 import gsap from 'gsap';
 import { SplitText } from "gsap/src/SplitText";
 
-gsap.registerPlugin(SplitText);
-
 
 const About = ({ transitionStatus }) => {
   let textRefs = useRef([]);
