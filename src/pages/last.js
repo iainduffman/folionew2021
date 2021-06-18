@@ -175,7 +175,7 @@ tl.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out",
             <br></br><br></br>
 
             <p id="quote-six" className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase">
-            "We found __that everything <span className="text-red-600">needed to be</span> tested__"
+            "We found __that everything <span className="">needed to be</span> tested__"
             </p>
 
             <br></br>
@@ -187,6 +187,10 @@ tl.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out",
         </div>
 
         <section className="default double mt-16 mb-16"><StaticImage src="../images/DSC01879.jpg" alt="A dinosaur" /></section>
+
+        <section className="default double mt-16 mb-16"><StaticImage src="../images/DSC01839.jpg" alt="A dinosaur" /></section>
+
+        <section className="default double mt-16 mb-16"><StaticImage src="../images/DSC01856-4.jpg" alt="A dinosaur" /></section>
 
       <div className="w-full h-full flex justify-center items-center realizzazioni">
       <div id="categories" className="leading-9 title w-full md:w-1/2">
