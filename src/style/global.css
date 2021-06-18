@@ -91,6 +91,7 @@ progress {
 	transform: translate(calc(-50% + 3px), calc(50vh - 50%)) rotate(90deg);
 	width: 100vh;
 	height: 16px;
+  background: transparent;
 }
 
 .dummy-start-scroll-contact, .dummy-start-scroll-about, .dummy-start-scroll-next {
