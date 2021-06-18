@@ -175,7 +175,7 @@ tl.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out",
             <br></br><br></br>
 
             <p id="quote-two" className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase">
-            "We found __that everything needed to be tested__"
+            "We found __that everything <span className="text-red-600">needed to be</span> tested__"
             </p>
 
             <br></br>
