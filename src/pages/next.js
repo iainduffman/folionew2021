@@ -134,7 +134,7 @@ tl3.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out"
         <Menu />
         <div className="w-full h-full flex justify-center items-center realizzazioni">
           <div id="categories" className="leading-9 title w-full md:w-1/2 text-red-600">
-          <p id="quote-three" className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase">
+          <p id="quote-three" className="list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase">
           Exploring the hidden dimension on 43rd street.
           </p>
     

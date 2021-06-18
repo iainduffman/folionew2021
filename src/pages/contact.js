@@ -136,7 +136,7 @@ const About = ({ transitionStatus }) => {
         <Menu />
         <div className="w-full h-full flex justify-center items-center realizzazioni">
           <div id="categories" className="leading-9 title w-full md:w-1/2 text-black-600">
-          <p id="quote-four" className="list-none text-6xl md:text-6xl lg:text-8xl font-extra-black relative overflow-hidden uppercase transform phrase">
+          <p id="quote-four" className="list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase">
           __The story of a living breathing design language system
           </p>
     
