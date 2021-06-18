@@ -70,6 +70,19 @@ export const Menu = () => {
               Four
             </TransitionLink>
           </div>
+          <div className="mr-8 text-md uppercase">
+            <TransitionLink
+              to="/last"
+              exit={{
+                length: 2,
+              }}
+              entry={{}}
+              className="hover:text-gray-600"
+              activeClassName="border-b-2 border-gray-600"
+            >
+              Five
+            </TransitionLink>
+          </div>
         </div>
       </div>
     </>

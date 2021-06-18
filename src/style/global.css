@@ -115,6 +115,13 @@ section.default {
   background-color: rgb(39, 39, 39);
 }
 
+section.default.double {
+  width: 100%;
+  height: 1000px;
+  overflow: hidden;
+  background-color: rgb(39, 39, 39);
+}
+
 progress::-webkit-progress-bar {
   background: transparent;
 }
