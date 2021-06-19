@@ -7,7 +7,7 @@ import { SplitText } from "../components/SplitText";
 import { ScrollTrigger } from "../components/ScrollTrigger";
 import { StaticImage } from "gatsby-plugin-image";
 
-
+gsap.registerPlugin(ScrollTrigger);
 
 const About = ({ transitionStatus }) => {
   let textRefs = useRef([]);

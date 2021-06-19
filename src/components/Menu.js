@@ -85,6 +85,7 @@ export const Menu = () => {
           </div>
           <div className="mr-8 text-md uppercase">
             <TransitionLink
+            rel="prefetch"
               to="/lastone"
               exit={{
                 length: 2,
