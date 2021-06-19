@@ -83,6 +83,19 @@ export const Menu = () => {
               Five
             </TransitionLink>
           </div>
+          <div className="mr-8 text-md uppercase">
+            <TransitionLink
+              to="/lastone"
+              exit={{
+                length: 2,
+              }}
+              entry={{}}
+              className="hover:text-gray-600"
+              activeClassName="border-b-2 border-gray-600"
+            >
+              Six
+            </TransitionLink>
+          </div>
         </div>
       </div>
     </>
