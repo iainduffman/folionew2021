@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Menu } from '../components/Menu';
 import gsap from 'gsap';
+import { StaticImage } from "gatsby-plugin-image";
 
 // markup
 const IndexPage = ({ transitionStatus }) => {
@@ -26,7 +27,13 @@ const IndexPage = ({ transitionStatus }) => {
       <main className="container mx-auto px-2 md:px-0">
         <Menu />
         <div className="text-3xl w-full mx-auto justify-center flex font-bold hometex opacity-0">
-          WELCOME TO THE HOME PAGE
+          WELCOME TO THE HOME PAGee
+          <div class="hide-images">
+          <StaticImage src="../images/DSC02018-2.jpg" alt="A dinosaur" />
+          <section className="default double mt-16 mb-16"><StaticImage src="../images/DSC02014-3.jpg" alt="A dinosaur" /></section>
+          <section className="default double mt-16 mb-16"><StaticImage src="../images/DSC02024.jpg" alt="A dinosaur" /></section>
+          <section className="default double mt-16 mb-16"><StaticImage src="../images/DSC02029.jpg" alt="A dinosaur" /></section>
+          </div>
         </div>
       </main>
     </>

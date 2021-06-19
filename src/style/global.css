@@ -108,6 +108,11 @@ progress {
 
 }
 
+.hide-images {
+  display: none;
+  visibility: hidden;
+}
+
 section.default {
   width: 100%;
   /* height: 500px; */
