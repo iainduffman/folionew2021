@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { Menu } from '../components/Menu';
 import gsap from 'gsap';
+import { SplitText } from "../components/SplitText";
 import { StaticImage } from "gatsby-plugin-image";
+import { Menu } from '../components/Menu';
 
 
 
