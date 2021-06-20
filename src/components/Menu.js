@@ -9,13 +9,11 @@ export const Menu = () => {
   function handleClick(e) {
     e.preventDefault();
     console.log('The link was clicked!!!!');
-    gsap.to(".menuContainer", {width: 0, duration: 0.5});
+    gsap.to(".menuContainer", {width: 0, duration: 0.5, delay: 0.2});
     gsap.to(".overlay", {opacity: '0', duration: 0.3});
-    gsap.to("#menu-items", {opacity: '0', duration: 0.2});
     gsap.to(".menuContents", {opacity: '0', duration: 0.3});
-    gsap.set(".menuContainer", {opacity: '0', delay: 0.6});
     gsap.set(".menuContainer", {zIndex: '999'});
-    gsap.set("#menu-items .phrase", {opacity: '0', delay: 0, delay: 1});
+    gsap.to("#menu-items .phrase", {opacity: '0', duration: 0.5});
   }
 
   
@@ -28,17 +26,10 @@ export const Menu = () => {
     gsap.to(".overlay", {opacity: '0.8', duration: 0.3});
     gsap.to(".menuContents", {opacity: '0.8', duration: 0.3});
     gsap.set(".menuContainer", {zIndex: '99999'});
-    gsap.set("#menu-items .phrase", {opacity: '1', delay: 0.4});
-    tl8.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01, delay: 0.1}, "+=0");
+    gsap.to("#menu-items .phrase", {opacity: '1', delay: 0.4});
   }
 
-  var tl8 = gsap.timeline(), 
-    mySplitText = new SplitText("#menu-items", {type:"words,chars"}), 
-    chars = mySplitText.chars; //an array of all the divs that wrap each character
 
-gsap.set("#menu-items", {perspective: 400});
-
-tl8.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.01}, "+=0");
 
   return (
     <>
