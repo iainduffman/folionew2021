@@ -3,6 +3,10 @@ import { Menu } from '../components/Menu';
 import gsap from 'gsap';
 import { StaticImage } from "gatsby-plugin-image";
 
+
+
+
+
 // markup
 const IndexPage = ({ transitionStatus }) => {
   useEffect(() => {
@@ -24,6 +28,10 @@ const IndexPage = ({ transitionStatus }) => {
   }, [transitionStatus]);
   return (
     <>
+
+
+
+
           <div class="hide-images">
           {/* First one */}
           <StaticImage src="../images/u2-op.jpg" alt="A Image" />

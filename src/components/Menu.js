@@ -1,38 +1,49 @@
 import React from 'react';
+import Cursor from '../components/Cursor';
 import TransitionLink from 'gatsby-plugin-transition-link';
 import gsap from 'gsap';
 
 export const Menu = () => {
 
-
-  function green() {
-    var tlz = new gsap({paused: true});
-    tlz.to(".green", 0.3, {scale: 2});
-    return tlz;
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked!!!!');
+    gsap.to(".menuContainer", {width: 0, duration: 0.5});
+    gsap.to(".overlay", {opacity: '0', duration: 0.3});
+    gsap.to(".menuContents", {opacity: '0', duration: 0.3});
+    gsap.set(".menuContainer", {opacity: '0', delay: 0.6});
+    gsap.set(".menuContainer", {zIndex: '999'});
   }
 
-  gsap.to(".menuContainer", {
-    duration: 0.6,
-    delay: 2,
-    ease: 'Power1.easeInOut',
-    backgroundColor: '#000',
-    width: '0px'
-  })
-
-  var tlGreen = green();
+  
+  function handleClickOpen(e) {
+    e.preventDefault();
+    console.log('The link was clicked!!!!');
+    gsap.set(".menuContainer", {opacity: '1'});
+    gsap.to(".menuContainer", {width: '100%', duration: 0.8});
+    gsap.to(".overlay", {opacity: '0.8', duration: 0.3});
+    gsap.to(".menuContents", {opacity: '0.8', duration: 0.3});
+    gsap.set(".menuContainer", {zIndex: '99999'});
+  }
 
   return (
     <>
 
-    
-
-    <div className="menuContainer">
-    <div className="overlay"></div>
+      <div className="menuContainer">
+      <Cursor />
       <div className="menuContents">
-        <span className="text-white">Items here</span>
+        <span className="text-white" onClick={handleClick}>Items here XYZ</span>
       </div>
-    </div>
+      </div>
+
       <div className="flex mb-20 justify-between menu">
+      <div className="mr-8 text-md uppercase">
+            <a href="#" onClick={handleClickOpen}>
+              Open Menu
+            </a>
+          </div>
+
+
         <div className="mr-8 text-xl">
           <TransitionLink
             to="/"

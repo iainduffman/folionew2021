@@ -27,7 +27,7 @@ html,body {
     transition: all 150ms ease;
     transition-property: opacity, background-color, transform, border;
   }
-
+  
   .cursor {
     width: 140px;
     height: 140px;
@@ -81,6 +81,11 @@ transition-property: opacity;
   border: 4px solid rgb(189, 189, 189);
 }
 
+.menuContainer .cursor {
+  border: 4px solid #fff !important;
+  opacity: 1 !important;
+}
+
 
 progress {
 	-webkit-appearance: none;
@@ -106,11 +111,11 @@ progress {
 
 /* Menu */
 
-.menuContainer { position: fixed; left: 0px; height: 100%; width: 70%; background: #000;}
+.menuContainer { position: fixed; left: 0px; height: 100%; width: 0%; background: rgb(20, 20, 20); z-index: 999; opacity: 0;}
 
-.overlay { position: fixed; width: 100%; height: 100%; background: #000; opacity: 0.5; z-index: 2;}
+.overlay { position: fixed; width: 100%; height: 100%; background: #000; opacity: 0.5; top: 0; opacity: 0;}
 
-.menuuContents {}
+.menuContents { position: relative; z-index: 999; opacity: 0;}
 
 
 /* Other */
