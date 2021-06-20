@@ -33,10 +33,10 @@ export const Menu = () => {
   }
 
   var tl8 = gsap.timeline({delay: 0.5}), 
-  mySplitText = new SplitText("#menu-items", {type:"words,chars"}), 
+  mySplitText = new SplitText("#menu-items-XX", {type:"words,chars"}), 
   chars = mySplitText.chars; //an array of all the divs that wrap each character
 
-gsap.set("#menu-items", {perspective: 400});
+gsap.set("#menu-items-XX", {perspective: 400});
 
 
   return (
