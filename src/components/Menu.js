@@ -6,8 +6,6 @@ import { SplitText } from "../components/SplitText";
 
 export const Menu = () => {
 
-gsap.set("#menu-items", {perspective: 400});
-
   function handleClick(e) {
     e.preventDefault();
     console.log('The link was clicked!!!!');
@@ -35,10 +33,10 @@ gsap.set("#menu-items", {perspective: 400});
   }
 
   var tl8 = gsap.timeline(), 
-    mySplitText = new SplitText("#quote", {type:"words,chars"}), 
+    mySplitText = new SplitText("#menu-items", {type:"words,chars"}), 
     chars = mySplitText.chars; //an array of all the divs that wrap each character
 
-gsap.set("#quote", {perspective: 400});
+gsap.set("#menu-items", {perspective: 400});
 
 tl8.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.01}, "+=0");
 
@@ -51,7 +49,7 @@ tl8.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transfo
         <span className="text-white close" onClick={handleClick}></span>
 
         <div id="menu-items" className="m-auto text-left ml-40">
-        <p className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase hover:text-yellow-700">Biog</p>
+        <p className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase hover:text-yellow-700">Biography</p>
         <p className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase hover:text-red-700">Case Studies</p>
         <p className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase hover:text-blue-700">Resume</p>
         <p className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase hover:text-green-700">Contact</p>
