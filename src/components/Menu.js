@@ -2,7 +2,7 @@ import React from 'react';
 import Cursor from '../components/Cursor';
 import TransitionLink from 'gatsby-plugin-transition-link';
 import gsap from 'gsap';
-import { SplitText } from "../components/SplitText";
+
 
 export const Menu = () => {
 
@@ -29,14 +29,9 @@ export const Menu = () => {
     gsap.to(".menuContents", {opacity: '0.8', duration: 0.3});
     gsap.set(".menuContainer", {zIndex: '99999'});
     gsap.set("#menu-items .phrase", {opacity: '1', delay: 0.4});
-    tl8.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01, delay: 0.1}, "+=0");
   }
 
-  var tl8 = gsap.timeline({delay: 0.5}), 
-  mySplitText = new SplitText("#menu-items-XX", {type:"words,chars"}), 
-  chars = mySplitText.chars; //an array of all the divs that wrap each character
-
-gsap.set("#menu-items-XX", {perspective: 400});
+  
 
 
   return (
