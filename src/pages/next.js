@@ -190,7 +190,7 @@ tl3.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out"
       <p class="mb-16 text-gray-500">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
       </div>
       </div>
-      <section className="default double mb-16"><StaticImage src="../images/B1.jpg" alt="A dinosaur" /></section>
+      <section className="default double mb-16"><StaticImage src="../images/b1.jpg" alt="A dinosaur" /></section>
         <section className="default double mt-16 mb-16"><StaticImage src="../images/b2.jpg" alt="A dinosaur" /></section>
         <section className="default double mt-16 mb-16"><StaticImage src="../images/b3.jpg" alt="A dinosaur" /></section>
       </main>
