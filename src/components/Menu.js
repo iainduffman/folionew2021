@@ -1,9 +1,37 @@
 import React from 'react';
 import TransitionLink from 'gatsby-plugin-transition-link';
+import gsap from 'gsap';
 
 export const Menu = () => {
+
+
+  function green() {
+    var tlz = new gsap({paused: true});
+    tlz.to(".green", 0.3, {scale: 2});
+    return tlz;
+  }
+
+  gsap.to(".menuContainer", {
+    duration: 0.6,
+    delay: 2,
+    ease: 'Power1.easeInOut',
+    backgroundColor: '#000',
+    width: '0px'
+  })
+
+  var tlGreen = green();
+
   return (
     <>
+
+    
+
+    <div className="menuContainer">
+    <div className="overlay"></div>
+      <div className="menuContents">
+        <span className="text-white">Items here</span>
+      </div>
+    </div>
       <div className="flex mb-20 justify-between menu">
         <div className="mr-8 text-xl">
           <TransitionLink
