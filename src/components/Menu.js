@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import Cursor from '../components/Cursor';
 import TransitionLink from 'gatsby-plugin-transition-link';
 import gsap from 'gsap';
@@ -6,47 +6,24 @@ import { SplitText } from "../components/SplitText";
 
 export const Menu = () => {
 
-  function handleClick(e) {
-    e.preventDefault();
-    console.log('The link was clicked!!!!');
-    gsap.to(".menuContainer", {width: 0, duration: 0.5});
-    gsap.to(".overlay", {opacity: '0', duration: 0.3});
-    gsap.to("#menu-items", {opacity: '0', duration: 0.2});
-    gsap.to(".menuContents", {opacity: '0', duration: 0.3});
-    gsap.set(".menuContainer", {opacity: '0', delay: 0.6});
-    gsap.set(".menuContainer", {zIndex: '999'});
-    gsap.set("#menu-items .phrase", {opacity: '0', delay: 0, delay: 1});
-  }
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
   
-  function handleClickOpen(e) {
-    e.preventDefault();
-    console.log('The link was clicked!!!!');
-    gsap.set(".menuContainer", {opacity: '1'});
-    gsap.set("#menu-items", {opacity: '1'});
-    gsap.to(".menuContainer", {width: '100%', duration: 0.8});
-    gsap.to(".overlay", {opacity: '0.8', duration: 0.3});
-    gsap.to(".menuContents", {opacity: '0.8', duration: 0.3});
-    gsap.set(".menuContainer", {zIndex: '99999'});
-    gsap.set("#menu-items .phrase", {opacity: '1', delay: 0.4});
-    tl8.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01, delay: 0.1}, "+=0");
-  }
-
-  var tl8 = gsap.timeline(), 
-    mySplitText = new SplitText("#menu-items", {type:"words,chars"}), 
-    chars = mySplitText.chars; //an array of all the divs that wrap each character
-
-gsap.set("#menu-items", {perspective: 400});
-
-tl8.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.01}, "+=0");
-
   return (
+    
     <>
 
       <div id="menuWrapper" className="menuContainer">
       <Cursor />
       <div className="menuContents" className="flex h-screen">
-        <span className="text-white close" onClick={handleClick}></span>
+        <span className="text-white close"></span>
 
         <div id="menu-items" className="m-auto text-left ml-40">
         <p className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase hover:text-yellow-700">Biography</p>
@@ -54,15 +31,15 @@ tl8.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transfo
         <p className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase hover:text-blue-700">Resume</p>
         <p className="text-white list-none text-6xl md:text-6xl lg:text-8xl font-thin relative overflow-hidden uppercase transform phrase hover:text-green-700">Contact</p>
         
-        <p onClick={handleClick} className="text-opacity-70 text-white list-none text-6xl md:text-6xl lg:text-2xl font-thin relative overflow-hidden uppercase transform phrase hover:text-pink-700">Close</p>
+        <p className="text-opacity-70 text-white list-none text-6xl md:text-6xl lg:text-2xl font-thin relative overflow-hidden uppercase transform phrase hover:text-pink-700">Close</p>
         </div>
       </div>
       </div>
 
       <div className="flex mb-20 justify-between menu">
       <div className="mr-8 text-md uppercase">
-            <a href="#" onClick={handleClickOpen}>
-              Open Menu
+            <a href="#">
+              Open Menus
             </a>
           </div>
 
