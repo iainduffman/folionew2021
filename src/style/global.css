@@ -7,6 +7,60 @@
 html,body {
     cursor: none
   }
+
+/* Modal test */
+
+
+.modal-container {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.modal-container.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#showthismodal {
+
+}
+
+  .modal-veil {
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .modal-dialog {
+    position: relative;
+    width: 50%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;}
+
+    .modal-content-container {
+      color: black;
+      text-align: left;
+    }
+
+
+
+/* End of test */
+
+
   html *,body * {
     cursor: none;
   }
