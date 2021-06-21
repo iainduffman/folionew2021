@@ -6,7 +6,7 @@ const ModalContent = forwardRef((props, ref, ) => {
     
     if (typeof document !== 'undefined') {
 
-    var tlx = gsap.timeline({delay: 0.5}), 
+    var tlx = gsap.timeline({delay: 0.4}), 
     mySplitTextx = new SplitText("#menu-items", {type:"words,chars"}), 
     chars = mySplitTextx.chars; //an array of all the divs that wrap each character
     tlx.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01}, "+=0");
