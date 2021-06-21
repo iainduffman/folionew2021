@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import gsap from 'gsap';
+import { SplitText } from "../components/SplitText";
 import ModalContent from "./ModalContent";
+
 
 const Modal = props => {
     let modalVeil = null;
@@ -30,6 +32,7 @@ const Modal = props => {
       modalTween.reverse();
       gsap.delayedCall(modalTween.duration(), props.close);
     };
+
   
     return (
       <div id="showthismodal" className={`modal-container${props.visible ? " show" : ""}`}>
