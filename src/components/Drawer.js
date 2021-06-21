@@ -13,14 +13,8 @@ const Modal = props => {
   
     useEffect(() => {
       modalTween
-        .to(modalVeil, 0.25, { autoAlpha: 1 })
-        .to(modalDialog, 0.35, { y: 0, autoAlpha: 1 })
-        .from(
-          modalContent.children,
-          0.35,
-          { y: 15, opacity: 0, stagger: 0.1 },
-          "-=0.15"
-        )
+        .to(modalDialog, 1, { width: '100%' })
+        .from(modalContent.children, 0.35, { opacity: 1, stagger: 0.1 }, "-=0.15")
         .reverse();
     }, []);
   
@@ -35,7 +29,7 @@ const Modal = props => {
 
   
     return (
-      <div id="showthismodal" className={`modal-container${props.visible ? " show" : ""}`}>
+      <div className={`modal-container${props.visible ? " show" : ""}`}>
         <div
           className="modal-veil"
           ref={e => (modalVeil = e)}
