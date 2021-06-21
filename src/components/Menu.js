@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TransitionLink from 'gatsby-plugin-transition-link';
 import Drawer from "./Drawer";
+import {AnimateMenu} from "./ModalContent";
 
 export const Menu = () => {
 
@@ -8,6 +9,7 @@ export const Menu = () => {
 
   const showModal = () => {
     setIsModalVisible(true);
+    AnimateMenu()
   };
 
   const closeModal = () => {

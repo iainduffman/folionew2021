@@ -1,17 +1,29 @@
-import React, { forwardRef } from "react";
+import React, { useEffect, forwardRef } from "react";
 import gsap from 'gsap';
 import { SplitText } from "../components/SplitText";
+
+export var Playhim = function() {
+  return (
+    // Some other JSX
+    console.log('I was triggered...to say something...?!!!'),
+    console.log('My animation should be triggering!')
+    
+  );
+};
 
 const ModalContent = forwardRef((props, ref, ) => {
     
     if (typeof document !== 'undefined') {
 
+    function AnimateMenu() {
+    console.log('My animation should be triggering!');
     var tlx = gsap.timeline({delay: 0.4}), 
     mySplitTextx = new SplitText("#menu-items", {type:"words,chars"}), 
-    chars = mySplitTextx.chars; //an array of all the divs that wrap each character
-    tlx.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01}, "+=0");
-    console.log('I was triggered...');
+    chars = mySplitTextx.words; //an array of all the divs that wrap each character
+    tlx.pause()
+    tlx.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50", ease:"out", stagger: 0.01}, "+=0");
 
+}
 
   return (
     

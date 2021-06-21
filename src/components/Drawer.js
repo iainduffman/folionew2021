@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import gsap from 'gsap';
+import { SplitText } from "../components/SplitText";
 import Cursor from '../components/Cursor';
 import ModalContent from "./ModalContent";
+import {AnimateMenu} from "./ModalContent";
+import {Playhim} from "./ModalContent";
+
+
+
 
 
 const Modal = props => {
@@ -13,10 +19,14 @@ const Modal = props => {
   
     useEffect(() => {
       modalTween
-        .to(modalVeil, 1, { width: '100%', ease: "power2.inOut" })
+        .to(modalVeil, 1, { width: '100%', ease: "power2.inOut", onComplete: Playhim })
         .to(modalDialog, 1, { opacity: 1, delay: 0 }, "-=0.15")
-        .reverse();
-    }, []);
+        .reverse()
+        modalTween.eventCallback("onUpdate", Playhim);
+
+    },
+    
+    []);
   
     useEffect(() => {
       modalTween.reversed(!props.visible);
@@ -25,6 +35,8 @@ const Modal = props => {
     const closeModal = () => {
       modalTween.reverse();
       gsap.delayedCall(modalTween.duration(), props.close);
+      console.log('I was triggered...to clsoe...');
+      Playhim()
     };
 
   
@@ -32,7 +44,7 @@ const Modal = props => {
 
       <div className={`modal-container${props.visible ? " show" : ""}`}>
         <div onClick={closeModal}
-          className="modal-veil flex h-screen"
+          className="modal-veil"
           ref={e => (modalVeil = e)}
           
         />
