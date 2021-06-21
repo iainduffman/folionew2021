@@ -6,11 +6,11 @@ const ModalContent = forwardRef((props, ref, ) => {
     
     if (typeof document !== 'undefined') {
 
-    var tl = gsap.timeline({delay: 1}), 
-    mySplitText = new SplitText("#menu-items--", {type:"words,chars"}), 
+    var tl = gsap.timeline({delay: 0.5}), 
+    mySplitText = new SplitText("#menu-items", {type:"words,chars"}), 
     chars = mySplitText.chars; //an array of all the divs that wrap each character
 
-gsap.set("#menu-items--", {perspective: 400});
+gsap.set("#menu-items", {perspective: 400});
 
 
 tl.from(chars, {duration: 0.8, y:180, transformOrigin:"0% 50% -50",  ease:"out", stagger: 0.01}, "+=0");
