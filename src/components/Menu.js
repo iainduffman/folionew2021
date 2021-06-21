@@ -1,35 +1,29 @@
 import React, { useState, useEffect } from "react";
 import TransitionLink from 'gatsby-plugin-transition-link';
 import Drawer from "./Drawer";
-import {AnimateMenu} from "./ModalContent";
 
 export const Menu = () => {
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modal, setModal] = useState(false);
 
-  const showModal = () => {
-    setIsModalVisible(true);
-    AnimateMenu()
-  };
 
-  const closeModal = () => {
-    setIsModalVisible(false);
+  const btnClick = e => {
+    e.preventDefault();
+
+    setModal(true);
   };
   
   return (
     
     <>
-
-
-<Drawer visible={isModalVisible} close={closeModal} />
-
     
 
       <div className="flex mb-20 justify-between menu">
       <div className="mr-8 text-md uppercase">
-            <a href="#" onClick={showModal}>
+            <a href="#" onClick={btnClick}>
               Open M
             </a>
+            <Drawer modal={modal} setModal={setModal} />
           </div>
 
           
