@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import gsap from 'gsap';
 import { SplitText } from "../components/SplitText";
+import Cursor from '../components/Cursor';
 import ModalContent from "./ModalContent";
 
 
@@ -13,8 +14,8 @@ const Modal = props => {
   
     useEffect(() => {
       modalTween
-        .to(modalDialog, 1, { width: '100%' })
-        .from(modalContent.children, 0.35, { opacity: 1, stagger: 0.1 }, "-=0.15")
+        .to(modalVeil, 1, { width: '100%', ease: "power2.inOut" })
+        .to(modalDialog, 1, { opacity: 1, delay: 0 }, "-=0.15")
         .reverse();
     }, []);
   
@@ -29,16 +30,16 @@ const Modal = props => {
 
   
     return (
+
       <div className={`modal-container${props.visible ? " show" : ""}`}>
-        <div
-          className="modal-veil"
+        <div onClick={closeModal}
+          className="modal-veil flex h-screen"
           ref={e => (modalVeil = e)}
-          onClick={closeModal, console.log('Im in the dom...')}
           
         />
+        <Cursor />
         <div onClick={closeModal} className="modal-dialog" ref={e => (modalDialog = e)}>
           <ModalContent ref={e => (modalContent = e)} />
-          <p onClick={closeModal} className="closethis">CLOSE THIS</p>
         </div>
       </div>
     );

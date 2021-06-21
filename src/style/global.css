@@ -15,7 +15,7 @@ html,body {
   height: 100vh;
   width: 100%;
   position: fixed;
-  z-index: 500;
+  z-index: 9999;
   top: 0;
   left: 0;
   right: 0;
@@ -33,20 +33,18 @@ html,body {
   .modal-veil {
     height: 100vh;
     width: 0%;
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
+    left: 0px;
+    position: fixed;
+    background: #1b1b1b;
   }
 
   .modal-dialog {
-    position: fixed;
-    width: 0%;
-    left: 0;
-    height: 100%;
-    background-color: rgb(48, 48, 48);
+    width: auto;
     border-radius: 0px;
-    padding: 20px;
-    transform: translateY(50px);
+    padding: 0px;
+    opacity: 0;
+    left: 0;
+    position: absolute;
 
   }
 
@@ -103,7 +101,7 @@ transition-property: opacity;
   overflow: hidden;
 }
 
-#menu-items .phrase {opacity: 0;}
+/* #menu-items .phrase {opacity: 0;} */
 
   .c--hidden {
      opacity: 0;
@@ -141,9 +139,10 @@ transition-property: opacity;
   border: 4px solid rgb(189, 189, 189);
 }
 
-.menuContainer .cursor {
+.modal-veil .cursor {
   border: 4px solid #fff !important;
   opacity: 1 !important;
+  z-index: 9999999;
 }
 
 
