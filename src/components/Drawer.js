@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import gsap from 'gsap';
-import { SplitText } from "../components/SplitText";
 import Cursor from '../components/Cursor';
 import ModalContent from "./ModalContent";
 

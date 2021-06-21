@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import Cursor from '../components/Cursor';
 import TransitionLink from 'gatsby-plugin-transition-link';
-import gsap from 'gsap';
-import { SplitText } from "../components/SplitText";
 import Drawer from "./Drawer";
 
 export const Menu = () => {
@@ -12,7 +8,6 @@ export const Menu = () => {
 
   const showModal = () => {
     setIsModalVisible(true);
-    console.log('Modal visible...?')
   };
 
   const closeModal = () => {
